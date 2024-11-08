@@ -14,6 +14,10 @@ class BaseCoordinator: Coordinator {
     var parentCoordinator: Coordinator?
     var navigationController = UINavigationController()
 
+    // MARK: Lifecycle
+
+    init() {}
+
     // MARK: Functions
 
     func start() { fatalError("Start method must be implemented") }

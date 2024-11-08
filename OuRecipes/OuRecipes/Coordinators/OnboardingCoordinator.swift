@@ -8,6 +8,12 @@
 import Foundation
 
 class OnboardingCoordinator: BaseCoordinator {
+    // MARK: Lifecycle
+
+    override init() {}
+
+    // MARK: Overridden Functions
+
     override func start() {
         let viewController = OnboardingViewController.generateController()
         guard let onboardingViewController = viewController as? OnboardingViewController else { return }
