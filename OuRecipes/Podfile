@@ -1,6 +1,7 @@
 def main_pods
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'DeviceKit'
 end
 
 def testing_pods
