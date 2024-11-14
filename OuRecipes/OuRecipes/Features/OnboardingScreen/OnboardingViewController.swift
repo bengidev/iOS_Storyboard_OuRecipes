@@ -14,9 +14,10 @@ final class OnboardingViewController: UIViewController {
     private static let name = "OnboardingStoryboard"
 
     // MARK: Properties
-    @IBOutlet var headerLabels: [UILabel]!
-    
-    @IBOutlet private var onboardingLabel: UILabel!
+
+    @IBOutlet private var headerLabels: [UILabel]!
+    @IBOutlet private var footerLabel: UILabel!
+    @IBOutlet private var getStartedButton: UIButton!
 
     // MARK: Lifecycle
 
@@ -97,8 +98,24 @@ final class OnboardingViewController: UIViewController {
     // MARK: Functions
 
     private func loadFeatureStyle() {
+        self.buildHeaderLabelStyle()
+        self.buildFooterLabelStyle()
+        self.buildGetStartedButtonStyle()
+    }
+
+    private func buildHeaderLabelStyle() {
         for label in self.headerLabels {
-            label.font = .preferredFont(forTextStyle: .largeTitle).bold()
+            label.loadAppTitleLabelStyle()
         }
+    }
+
+    private func buildFooterLabelStyle() {
+        self.footerLabel.loadAppFootnoteLabelStyle()
+    }
+
+    private func buildGetStartedButtonStyle() {
+        self.getStartedButton.loadAppTitleButtonStyle()
+        self.getStartedButton.roundCorners(.allCorners, radius: 15.0)
+        self.getStartedButton.setHighlightedBackgroundColor(.background)
     }
 }
