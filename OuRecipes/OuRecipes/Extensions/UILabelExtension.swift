@@ -30,4 +30,15 @@ extension UILabel {
             font = .preferredFont(forTextStyle: .headline)
         }
     }
+    
+    func loadAppFootnoteLabelStyle() {
+        switch Device.current.diagonal {
+        case ...Device.iPhoneSE.diagonal:
+            font = .preferredFont(forTextStyle: .caption1)
+        case ...Device.iPhoneSE3.diagonal:
+            font = .preferredFont(forTextStyle: .footnote)
+        default:
+            font = .preferredFont(forTextStyle: .subheadline)
+        }
+    }
 }
