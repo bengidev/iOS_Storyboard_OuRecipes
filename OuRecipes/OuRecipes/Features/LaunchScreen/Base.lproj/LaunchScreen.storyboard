@@ -4,8 +4,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,18 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Launch Screen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFo-JP-Vu3">
-                                <rect key="frame" x="137.33333333333334" y="428.33333333333331" width="118.33333333333334" height="20.333333333333314"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AppLogo" translatesAutoresizingMaskIntoConstraints="NO" id="9f1-ua-yUr">
+                                <rect key="frame" x="19.666666666666657" y="248.66666666666666" width="353.66666666666674" height="379.66666666666674"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="BackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bFo-JP-Vu3" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="AJF-g7-Ji3"/>
-                            <constraint firstItem="bFo-JP-Vu3" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="eRf-U3-gGB"/>
+                            <constraint firstItem="9f1-ua-yUr" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.5" id="S2J-gv-i0T"/>
+                            <constraint firstItem="9f1-ua-yUr" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" multiplier="0.9" id="eJO-qU-Mz0"/>
+                            <constraint firstItem="9f1-ua-yUr" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="iRn-Uz-iCf"/>
+                            <constraint firstItem="9f1-ua-yUr" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="sVG-MN-6JX"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,8 +37,9 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="AppLogo" width="2000" height="2376"/>
+        <namedColor name="BackgroundColor">
+            <color red="0.96078431372549022" green="0.94117647058823528" blue="0.92549019607843142" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
