@@ -5,12 +5,23 @@
 //  Created by ENB Mac Mini M1 on 04/09/24.
 //
 
-import Foundation
 import UIKit
+import DeviceKit
 
 // MARK: For UIButton Usage
 
 extension UIButton {
+    func loadAppTitleButtonStyle() {
+        switch Device.current.diagonal {
+        case ...Device.iPhoneSE.diagonal:
+            self.titleLabel?.font = .preferredFont(forTextStyle: .footnote).bold
+        case ...Device.iPhoneSE3.diagonal:
+            self.titleLabel?.font = .preferredFont(forTextStyle: .subheadline).bold
+        default:
+            self.titleLabel?.font = .preferredFont(forTextStyle: .headline)
+        }
+    }
+    
     func setHighlightedBackgroundColor(_ highlightedColor: UIColor, darkenPercentage: CGFloat = 10.0) {
         addTarget(self, action: #selector(self.highlightButton), for: [.touchDown, .touchDragEnter])
         addTarget(self, action: #selector(self.unhighlightButton), for: [.touchUpInside, .touchDragExit, .touchCancel])
