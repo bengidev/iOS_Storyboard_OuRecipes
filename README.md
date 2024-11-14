@@ -8,6 +8,13 @@ A simple food recipes app for iOS which using Swift and Storyboard to create the
 
 
 
+## Credits
+
+These are credits for resources that this app used
+- [Three muffins sitting on top of a wire rack](https://unsplash.com/photos/three-muffins-sitting-on-top-of-a-wire-rack-Pw6Qtdt2eq0)
+
+
+
 ## Requirements
 
 These are the minimum requirements to be able to run the app:
