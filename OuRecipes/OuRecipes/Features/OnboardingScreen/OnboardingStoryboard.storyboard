@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -13,35 +14,73 @@
             <objects>
                 <viewController storyboardIdentifier="OnboardingViewController" id="Y6W-OH-hqX" customClass="OnboardingViewController" customModule="OuRecipes" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Onboarding Screen" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T8V-A0-UDG">
-                                <rect key="frame" x="119.66666666666667" y="428.33333333333331" width="153.66666666666663" height="20.333333333333314"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OnboardingLogo" translatesAutoresizingMaskIntoConstraints="NO" id="5WC-Ry-5ee">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Vh8-Yj-stj">
+                                <rect key="frame" x="10" y="87.999999999999986" width="404" height="163.66666666666663"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cooking" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFw-UW-Qf7">
+                                        <rect key="frame" x="0.0" y="0.0" width="404" height="40.666666666666664"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <color key="textColor" name="BlackTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delicious" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2G-OQ-bi3">
+                                        <rect key="frame" x="0.0" y="40.666666666666657" width="404" height="33.666666666666657"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Like a Chef" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxU-RV-AOt">
+                                        <rect key="frame" x="0.0" y="74.333333333333343" width="404" height="33.666666666666657"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="dFH-cy-Yht">
+                                        <rect key="frame" x="0.0" y="108.00000000000001" width="404" height="55.666666666666671"/>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="T8V-A0-UDG" firstAttribute="centerY" secondItem="vDu-zF-Fre" secondAttribute="centerY" id="Cqo-LG-uVo"/>
-                            <constraint firstItem="T8V-A0-UDG" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="ZEV-IY-flU"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Vh8-Yj-stj" secondAttribute="trailing" id="8xG-Pe-ELv"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5WC-Ry-5ee" secondAttribute="trailing" id="ARr-Cv-82k"/>
+                            <constraint firstItem="5WC-Ry-5ee" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Ihf-yw-qYt"/>
+                            <constraint firstAttribute="top" secondItem="5WC-Ry-5ee" secondAttribute="top" id="K8l-hS-Ynb"/>
+                            <constraint firstItem="5WC-Ry-5ee" firstAttribute="bottom" secondItem="5EZ-qb-Rvc" secondAttribute="bottom" id="LFz-Ab-yTo"/>
+                            <constraint firstItem="Vh8-Yj-stj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="Q0f-qG-x2w"/>
+                            <constraint firstItem="Vh8-Yj-stj" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" multiplier="2" id="nAd-d5-vfo"/>
+                            <constraint firstItem="Vh8-Yj-stj" firstAttribute="height" secondItem="vDu-zF-Fre" secondAttribute="height" multiplier="0.2" id="oxj-L8-FAx"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="onboardingLabel" destination="T8V-A0-UDG" id="7oJ-DG-ox9"/>
+                        <outletCollection property="headerLabels" destination="Y2G-OQ-bi3" collectionClass="NSMutableArray" id="tTr-Ic-irS"/>
+                        <outletCollection property="headerLabels" destination="xFw-UW-Qf7" collectionClass="NSMutableArray" id="geb-cf-eOR"/>
+                        <outletCollection property="headerLabels" destination="zxU-RV-AOt" collectionClass="NSMutableArray" id="mxs-rI-TZL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-192" y="-27"/>
+            <point key="canvasLocation" x="-195" y="-27.464788732394368"/>
         </scene>
     </scenes>
     <resources>
+        <image name="OnboardingLogo" width="1920" height="2880"/>
+        <namedColor name="BlackTextColor">
+            <color red="0.015686274509803921" green="0.050980392156862744" blue="0.070588235294117646" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

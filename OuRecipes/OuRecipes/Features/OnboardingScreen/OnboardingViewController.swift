@@ -14,7 +14,8 @@ final class OnboardingViewController: UIViewController {
     private static let name = "OnboardingStoryboard"
 
     // MARK: Properties
-
+    @IBOutlet var headerLabels: [UILabel]!
+    
     @IBOutlet private var onboardingLabel: UILabel!
 
     // MARK: Lifecycle
@@ -49,20 +50,6 @@ final class OnboardingViewController: UIViewController {
     ///
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    }
-
-    /// It doesn’t do Anything by default. When a view’s bounds change, the view adjusts the position of its subviews.
-    /// The view controller can override this method to make changes before the view lays out its subviews.
-    ///
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-    }
-
-    /// This method is called after the viewController has been adjusting to its subview following a change on its bound.
-    /// Add code here if you want to make changes to subviews after they have been set.
-    ///
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
     }
 
     /// This method is called after the view present on the screen. Usually, save data to core data or start animation
@@ -110,6 +97,8 @@ final class OnboardingViewController: UIViewController {
     // MARK: Functions
 
     private func loadFeatureStyle() {
-        self.view.backgroundColor = .systemOrange
+        for label in self.headerLabels {
+            label.font = .preferredFont(forTextStyle: .largeTitle).bold()
+        }
     }
 }
