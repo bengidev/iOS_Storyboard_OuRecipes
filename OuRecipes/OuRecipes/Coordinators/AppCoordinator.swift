@@ -5,12 +5,15 @@
 //  Created by ENB Mac Mini M1 on 08/11/24.
 //
 
+import RxSwift
 import UIKit
 
 class AppCoordinator: BaseCoordinator {
     // MARK: Properties
 
     private var window: UIWindow
+
+    private let disposeBag = DisposeBag()
 
     // MARK: Lifecycle
 
@@ -26,10 +29,23 @@ class AppCoordinator: BaseCoordinator {
         self.window.rootViewController = self.navigationController
         self.window.makeKeyAndVisible()
 
-        // TODO: here you could check if user is signed in and show appropriate screen
-        let coordinator = OnboardingCoordinator()
-        coordinator.navigationController = self.navigationController
+        UserDefaultSource
+            .instance
+            .getHaveAccessOnboarding()
+            .observe(on: MainScheduler.instance)
+            .subscribe(onNext: { result in
+                let coordinator: BaseCoordinator
 
-        self.start(coordinator: coordinator)
+                // Here you could check if user is signed in and show appropriate screen
+                if result {
+                    coordinator = HomeCoordinator.intance
+                } else {
+                    coordinator = OnboardingCoordinator.intance
+                }
+
+                coordinator.navigationController = self.navigationController
+                self.start(coordinator: coordinator)
+            })
+            .disposed(by: self.disposeBag)
     }
 }

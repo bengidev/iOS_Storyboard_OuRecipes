@@ -31,6 +31,14 @@ class BaseCoordinator: Coordinator {
         dump(self.childCoordinators.description, name: "BaseCoordinator start")
     }
 
+    func removeChildCoordinators() {
+        for childCoordinator in self.childCoordinators {
+            childCoordinator.removeChildCoordinators()
+        }
+
+        self.childCoordinators.removeAll()
+    }
+
     func didFinish(coordinator: Coordinator) {
         if let index = self.childCoordinators.firstIndex(where: { $0 === coordinator }) {
             self.childCoordinators.remove(at: index)

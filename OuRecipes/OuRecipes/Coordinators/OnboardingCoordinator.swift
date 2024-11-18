@@ -6,11 +6,20 @@
 //
 
 import Foundation
+import RxSwift
 
 class OnboardingCoordinator: BaseCoordinator {
+    // MARK: Static Properties
+
+    static let intance: OnboardingCoordinator = .init()
+
+    // MARK: Properties
+
+    private let disposeBag = DisposeBag()
+
     // MARK: Lifecycle
 
-    override init() {}
+    override private init() {}
 
     // MARK: Overridden Functions
 
@@ -18,6 +27,16 @@ class OnboardingCoordinator: BaseCoordinator {
         let viewController = OnboardingViewController.generateController()
         guard let onboardingViewController = viewController as? OnboardingViewController else { return }
 
-        self.navigationController.viewControllers = [onboardingViewController]
+        self.navigationController.setViewControllers([onboardingViewController], animated: true)
+    }
+
+    // MARK: Functions
+
+    func navigateToHomeScreen() {
+        self.removeChildCoordinators()
+
+        let coordinator = HomeCoordinator.intance
+        coordinator.navigationController = self.navigationController
+        self.start(coordinator: coordinator)
     }
 }
